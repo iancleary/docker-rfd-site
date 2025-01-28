@@ -1,0 +1,12 @@
+services:
+  rfd-site:
+    build:
+      context: .
+    container_name: rfd-site
+    volumes:
+      - ./app/content:/workdir/app/content
+    ports:
+      - "3000:3000"
+    env_file:
+    - path: ./.env
+      required: true # default
