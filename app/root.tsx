@@ -18,7 +18,7 @@ export const links: LinksFunction = () => [
 
 const styles = stylex.create({
   root: {
-    backgroundColor: colors.neutral50,
+    backgroundColor: colors.neutral950,
   },
 });
 

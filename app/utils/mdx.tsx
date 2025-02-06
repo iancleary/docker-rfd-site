@@ -14,29 +14,29 @@ import { Link, useLinkClickHandler } from "@remix-run/react";
 
 const styles = stylex.create({
   h1: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.large,
   },
   h2: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.medium,
   },
   h3: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.small,
   },
   h4: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.small,
   },
   h5: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   h6: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   p: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     lineHeight: "1.5rem",
     paddingBlockStart: size.medium,
     paddingBlockEnd: size.medium,
@@ -46,14 +46,14 @@ const styles = stylex.create({
     color: colors.supportingPurple700,
   },
   ul: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   li: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   blockquote: {
     paddingInlineStart: size.medium,
-    borderInlineStartColor: colors.neutral200,
+    borderInlineStartColor: colors.neutral800,
     borderInlineStartStyle: "solid",
     borderInlineStartWidth: "0.2rem",
   },
@@ -75,7 +75,7 @@ const styles = stylex.create({
     // color: "red",
   },
   math: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     fontSize: "1.1rem",
     paddingTop: size.small,
   },

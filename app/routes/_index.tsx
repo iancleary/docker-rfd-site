@@ -3,7 +3,7 @@ import type { MetaFunction, SerializeFrom } from "@remix-run/node";
 import type { LoaderFunctionArgs } from "@remix-run/node"; // or cloudflare/deno
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
-import ContentTable from "~/components/contentTable";
+import RfdTable from "~/components/rfdTable";
 import { downloadMdxFileOrDirectory } from "~/utils/github.server"
 import { getAllFrontmatter } from "~/utils/mdx.server"
 import { Main } from "~/layouts/main";
@@ -59,7 +59,7 @@ export default function Index(): React.ReactElement {
 
   return (
     <Main>
-      <ContentTable rfds={rfdsFrontmatter} />
+      <RfdTable rfds={rfdsFrontmatter} />
       {/* <Paragraph>{JSON.stringify(rfds)}</Paragraph> */}
       {/* <Paragraph>{JSON.stringify(rfdsFrontmatter)}</Paragraph> */}
     </Main>
