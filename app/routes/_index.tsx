@@ -8,14 +8,18 @@ import { downloadMdxFileOrDirectory } from "~/utils/github.server"
 import { getAllFrontmatter } from "~/utils/mdx.server"
 import { Main } from "~/layouts/main";
 
+
+const title = process.env.TITLE ?? "RFD / Ian Cleary"
+const description = process.env.DESCRIPTION ?? "RFD site designed by Ian Cleary"
+
+
 export const meta: MetaFunction = () => {
   return [
-    { title: "RFD / Ian Cleary" },
-    { name: "description", content: "Welcome to my website!" },
+    { title: title },
+    { name: "description", content: description },
   ];
 };
 
-import { Paragraph } from "~/utils/mdx";
 import { GitHubFile, MdxListItem } from "types";
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -55,7 +59,7 @@ export default function Index(): React.ReactElement {
 
   return (
     <Main>
-      <ContentTable mdxListItems={rfdsFrontmatter} />
+      <ContentTable rfds={rfdsFrontmatter} />
       {/* <Paragraph>{JSON.stringify(rfds)}</Paragraph> */}
       {/* <Paragraph>{JSON.stringify(rfdsFrontmatter)}</Paragraph> */}
     </Main>
