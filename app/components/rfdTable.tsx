@@ -5,7 +5,6 @@ import { Link } from "@remix-run/react";
 import { Paragraph } from "~/utils/mdx";
 import { MdxListItem } from "types";
 
-
 const styles = stylex.create({
   text: {
     color: colors.neutral100,
@@ -241,13 +240,13 @@ function GridContentRow({ file }: { file: MdxListItem }) {
           </Link>
         </div>
         <div {...stylex.props(styles.state)}>{file.frontmatter.state}</div>
-        {file.frontmatter.updatedDate && (<div {...stylex.props(styles.date)}>
-          {getDateFormat(file.frontmatter.updatedDate)}
-        </div>
+        {file.frontmatter.updatedDate && (
+          <div {...stylex.props(styles.date)}>
+            {getDateFormat(file.frontmatter.updatedDate)}
+          </div>
         )}
         <div {...stylex.props(styles.labels)}>{file.frontmatter.labels}</div>
       </div>
-
     </div>
   );
 }
@@ -259,7 +258,9 @@ function CardTitle({ file }: { file: MdxListItem }) {
         <div {...stylex.props(styles.mobileNumber)}>
           RFD <span>{file.number}</span>
         </div>
-        <div {...stylex.props(styles.mobileTitle)}>{file.frontmatter.title}</div>
+        <div {...stylex.props(styles.mobileTitle)}>
+          {file.frontmatter.title}
+        </div>
       </div>
     </div>
   );
@@ -270,7 +271,9 @@ function CardContentRow({ file }: { file: MdxListItem }) {
     <div {...stylex.props(styles.mobileCardWrapper)}>
       <div {...stylex.props(styles.mobileCard)}>
         <div {...stylex.props(styles.mobileStateWrapper)}>
-          <div {...stylex.props(styles.mobileState)}>{file.frontmatter.state}</div>
+          <div {...stylex.props(styles.mobileState)}>
+            {file.frontmatter.state}
+          </div>
         </div>
         <Link {...stylex.props(styles.link)} to={file.slug} key={file.slug}>
           <CardTitle file={file} />
@@ -279,8 +282,7 @@ function CardContentRow({ file }: { file: MdxListItem }) {
           <div {...stylex.props(styles.mobileDate)}>
             {getDateFormat(file.frontmatter.updatedDate)}
           </div>
-        )
-        }
+        )}
         {/* <div {...stylex.props(styles.labels)}>{file.labels}</div> */}
       </div>
     </div>

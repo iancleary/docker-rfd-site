@@ -7,7 +7,7 @@ import { bundleMDX } from "mdx-bundler";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-import rehypeShiki from '@shikijs/rehype';
+import rehypeShiki from "@shikijs/rehype";
 import { Main } from "~/layouts/main";
 import { H1, MDXPage, Paragraph } from "~/utils/mdx";
 import { downloadFile } from "~/utils/github.server";
@@ -63,7 +63,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
             // Multiple themes
             // https://shiki.style/packages/rehype
             theme: "github-dark-default",
-            inline: 'tailing-curly-colon', // or other options
+            inline: "tailing-curly-colon", // or other options
           },
         ],
       ];
@@ -80,7 +80,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
   });
 }
 
-export default function Post({ }) {
+export default function Post({}) {
   // it's generally a good idea to memoize this function call to
   // avoid re-creating the component every render.
   // const { code, frontmatter, number } = useLoaderData<typeof loader>();

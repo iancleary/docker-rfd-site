@@ -4,18 +4,16 @@ import type { LoaderFunctionArgs } from "@remix-run/node"; // or cloudflare/deno
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
 import RfdTable from "~/components/rfdTable";
-import { downloadMdxFileOrDirectory } from "~/utils/github.server"
-import { getAllFrontmatter } from "~/utils/mdx.server"
+import { downloadMdxFileOrDirectory } from "~/utils/github.server";
+import { getAllFrontmatter } from "~/utils/mdx.server";
 import { Main } from "~/layouts/main";
 
 import { GitHubFile, MdxListItem } from "types";
 
 export async function loader({ params }: LoaderFunctionArgs) {
-
   const { entry, files } = await downloadMdxFileOrDirectory(`rfd`);
 
   const frontMatterList = await getAllFrontmatter(files);
-
 
   // console.log(parsedFiles);
   return json({

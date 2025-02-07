@@ -1,6 +1,6 @@
 import { createRequestHandler } from "@remix-run/express";
 import express from "express";
-import 'dotenv/config'
+import "dotenv/config";
 
 const viteDevServer =
   process.env.NODE_ENV === "production"
@@ -13,16 +13,11 @@ const viteDevServer =
 
 const app = express();
 app.use(
-  viteDevServer
-    ? viteDevServer.middlewares
-    : express.static("build/client")
+  viteDevServer ? viteDevServer.middlewares : express.static("build/client")
 );
 
 const build = viteDevServer
-  ? () =>
-      viteDevServer.ssrLoadModule(
-        "virtual:remix/server-build"
-      )
+  ? () => viteDevServer.ssrLoadModule("virtual:remix/server-build")
   : await import("./build/server/index.js");
 
 app.all("*", createRequestHandler({ build }));

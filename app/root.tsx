@@ -6,7 +6,11 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-import type { MetaFunction, LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import type {
+  MetaFunction,
+  LinksFunction,
+  LoaderFunctionArgs,
+} from "@remix-run/node";
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import * as stylex from "@stylexjs/stylex";
 import { colors } from "@iancleary/design-system/styles/tokens.stylex";
@@ -40,13 +44,10 @@ export async function loader({ params }: LoaderFunctionArgs) {
   });
 }
 
-export const meta: MetaFunction<typeof loader> = ({
-  data,
-}) => {
-  if (typeof data == 'undefined') {
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  if (typeof data == "undefined") {
     return [{ title: "RFD / Ian Cleary" }];
-  }
-  else {
+  } else {
     return [{ title: data.ENV.TITLE ?? "RFD" }];
   }
 };
