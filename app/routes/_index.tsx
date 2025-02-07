@@ -8,18 +8,6 @@ import { downloadMdxFileOrDirectory } from "~/utils/github.server"
 import { getAllFrontmatter } from "~/utils/mdx.server"
 import { Main } from "~/layouts/main";
 
-
-const title = process.env.TITLE ?? "RFD / Ian Cleary"
-const description = process.env.DESCRIPTION ?? "RFD site designed by Ian Cleary"
-
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: title },
-    { name: "description", content: description },
-  ];
-};
-
 import { GitHubFile, MdxListItem } from "types";
 
 export async function loader({ params }: LoaderFunctionArgs) {

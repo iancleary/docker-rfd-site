@@ -22,6 +22,7 @@
     "@remix-run/node": "^2.13.1",
     "@remix-run/react": "^2.13.1",
     "@remix-run/serve": "^2.13.1",
+    "@shikijs/rehype": "^2.3.2",
     "@stylexjs/stylex": "^0.9.3",
     "dotenv": "^16.4.7",
     "esbuild": "^0.24.2",

@@ -7,6 +7,7 @@ import { bundleMDX } from "mdx-bundler";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypeShiki from '@shikijs/rehype';
 import { Main } from "~/layouts/main";
 import { H1, MDXPage, Paragraph } from "~/utils/mdx";
 import { downloadFile } from "~/utils/github.server";
@@ -48,6 +49,21 @@ export async function loader({ params }: LoaderFunctionArgs) {
             // https://katex.org/docs/options.html
             displayMode: true,
             output: "mathml",
+          },
+        ],
+      ];
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        [
+          /**
+           * Adds support for math
+           */
+          rehypeShiki,
+          {
+            // Multiple themes
+            // https://shiki.style/packages/rehype
+            theme: "github-dark-default",
+            inline: 'tailing-curly-colon', // or other options
           },
         ],
       ];

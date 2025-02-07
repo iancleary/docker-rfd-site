@@ -43,7 +43,7 @@ const styles = stylex.create({
     fontSize: "1.1rem",
   },
   a: {
-    color: colors.supportingPurple700,
+    color: colors.supportingPurple300,
   },
   ul: {
     color: colors.neutral100,
@@ -53,19 +53,32 @@ const styles = stylex.create({
   },
   blockquote: {
     paddingInlineStart: size.medium,
-    borderInlineStartColor: colors.neutral800,
+    borderInlineStartColor: colors.neutral700,
     borderInlineStartStyle: "solid",
     borderInlineStartWidth: "0.2rem",
   },
   code: {
-    backgroundColor: colors.neutral100,
-    color: colors.neutral800,
-    padding: size.xsmall,
+    backgroundColor: colors.neutral900,
+    color: colors.neutral200,
+    // padding: size.xsmall,
+  },
+  preWrapper: {
+    paddingTop: size.medium,
+    paddingBottom: size.medium,
   },
   pre: {
-    backgroundColor: colors.neutral100,
+    backgroundColor: colors.neutral900,
+    borderWidth: "0.1em",
+    borderColor: colors.neutral600,
+    borderStyle: "solid",
+    borderRadius: size.small,
     color: colors.neutral800,
-    padding: size.xsmall,
+    paddingTop: size.small,
+    paddingLeft: size.small,
+    paddingBottom: size.small,
+    // Allow horizontal scroll of child code block
+    position: "relative",
+    overflow: "auto",
   },
   b: {
     fontWeight: 800,

@@ -4,8 +4,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { MetaFunction, LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node"; // or cloudflare/deno
 import * as stylex from "@stylexjs/stylex";
 import { colors } from "@iancleary/design-system/styles/tokens.stylex";
 import { Root } from "~/layouts/root";
@@ -22,7 +24,35 @@ const styles = stylex.create({
   },
 });
 
+declare global {
+  interface Window {
+    ENV: {
+      TITLE: string;
+    };
+  }
+}
+
+export async function loader({ params }: LoaderFunctionArgs) {
+  return json({
+    ENV: {
+      TITLE: process.env.TITLE ?? "RFD / Ian Cleary",
+    },
+  });
+}
+
+export const meta: MetaFunction<typeof loader> = ({
+  data,
+}) => {
+  if (typeof data == 'undefined') {
+    return [{ title: "RFD / Ian Cleary" }];
+  }
+  else {
+    return [{ title: data.ENV.TITLE ?? "RFD" }];
+  }
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
+  const data = useLoaderData<typeof loader>();
   return (
     <html lang="en" {...stylex.props(styles.root)}>
       {/* <html lang="en"> */}
@@ -35,6 +65,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Root>{children}</Root>
         <ScrollRestoration />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+          }}
+        />
         <Scripts />
       </body>
     </html>
