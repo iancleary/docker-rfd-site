@@ -4,7 +4,7 @@ import { colors } from "@iancleary/design-system/styles/tokens.stylex";
 
 const styles = stylex.create({
   text: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
 });
 

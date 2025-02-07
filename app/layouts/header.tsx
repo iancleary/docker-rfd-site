@@ -31,11 +31,11 @@ const styles = stylex.create({
     paddingTop: 16,
   },
   text: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     fontSize: size.large,
   },
   icon: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   noDecoration: {
     textDecoration: "none",

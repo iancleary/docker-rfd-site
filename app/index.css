@@ -1,2 +1,27 @@
 @import "@iancleary/design-system/styles/reset.css";
 @stylex stylesheet;
+
+/* CSS is from link below, modified for use with `pre > code` selector */
+/* https://github.com/shikijs/shiki/issues/3#issuecomment-2182692412 */
+/* Select only code inside pre (avoid adding line number `1` to inline code */
+/* pre > code */
+pre > code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+pre > code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: hsl(212, 33%, 79%);
+  /* colors.neutral200 */
+  /* https://github.com/iancleary/design-system/blob/5377d6b76eac20bcf250df6ae5f00f47d758f0a3/styles/tokens.stylex.ts#L50 */
+}
+
+code {
+  color: hsl(212, 33%, 79%);
+}

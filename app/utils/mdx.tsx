@@ -14,58 +14,71 @@ import { Link, useLinkClickHandler } from "@remix-run/react";
 
 const styles = stylex.create({
   h1: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.large,
   },
   h2: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.medium,
   },
   h3: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.small,
   },
   h4: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     paddingTop: size.small,
   },
   h5: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   h6: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   p: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     lineHeight: "1.5rem",
     paddingBlockStart: size.medium,
     paddingBlockEnd: size.medium,
     fontSize: "1.1rem",
   },
   a: {
-    color: colors.supportingPurple700,
+    color: colors.supportingPurple300,
   },
   ul: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   li: {
-    color: colors.neutral900,
+    color: colors.neutral100,
   },
   blockquote: {
     paddingInlineStart: size.medium,
-    borderInlineStartColor: colors.neutral200,
+    borderInlineStartColor: colors.neutral700,
     borderInlineStartStyle: "solid",
     borderInlineStartWidth: "0.2rem",
   },
   code: {
-    backgroundColor: colors.neutral100,
-    color: colors.neutral800,
-    padding: size.xsmall,
+    backgroundColor: colors.neutral900,
+    color: colors.neutral200,
+    // padding: size.xsmall,
+  },
+  preWrapper: {
+    paddingTop: size.medium,
+    paddingBottom: size.medium,
   },
   pre: {
-    backgroundColor: colors.neutral100,
+    backgroundColor: colors.neutral900,
+    borderWidth: "0.1em",
+    borderColor: colors.neutral600,
+    borderStyle: "solid",
+    borderRadius: size.small,
     color: colors.neutral800,
-    padding: size.xsmall,
+    paddingTop: size.small,
+    paddingLeft: size.small,
+    paddingBottom: size.small,
+    // Allow horizontal scroll of child code block
+    position: "relative",
+    overflow: "auto",
   },
   b: {
     fontWeight: 800,
@@ -75,7 +88,7 @@ const styles = stylex.create({
     // color: "red",
   },
   math: {
-    color: colors.neutral900,
+    color: colors.neutral100,
     fontSize: "1.1rem",
     paddingTop: size.small,
   },

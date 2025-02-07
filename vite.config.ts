@@ -1,8 +1,8 @@
-import "dotenv/config"
+import "dotenv/config";
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 // @ts-ignore
-import { denyImports } from "vite-env-only"
+import { denyImports } from "vite-env-only";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 // tell typescript to ignore type definitions for next line
