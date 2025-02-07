@@ -38,7 +38,7 @@ export async function compileMdx(mdxString: string) {
                 ...(options.rehypePlugins ?? []),
                 [
                     /**
-                     * Adds support for math
+                     * Adds support for code highlighting
                      */
                     rehypeShiki,
                     {
